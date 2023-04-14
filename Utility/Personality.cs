@@ -1,55 +1,83 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 
 public class Personality
 {
     // Statics
 
+    public static int totalPrejudice;
+    public static int totalAgreeableness;
+    public static int totalConscientiousness;
+    public static int totalNeuroticism;
+    public static int totalIntroExtro;
+    public static int totalHotHeadedness;
 
 
-    
+    public static int totalTempPrejudice;
+    public static int totalTempAgreeableness;
+    public static int totalTempConscientiousness;
+    public static int totalTempNeuroticism;
+    public static int totalTempIntroExtro;
+    public static int totalTempHotHeadedness;      
 
-    
 
 
     // Feilds
-    int prejudice;
-    int agreeableness;
-    int conscientiousness;
+    public int prejudice;
+    public int agreeableness;
+    public int conscientiousness;
     // neuroticism will make it so the person struggles to regain happiness at a faster rate
-    int neuroticism;
+    public int neuroticism;
     // a positive intext value means they are more extroverted and a negitive more introverted
-    int introExtro;
-    int hotHeadedness;
+    public int introExtro;
+    public int hotHeadedness;
 
 
 
     // The randomness feild will aid in the making of a totally random personality, assigning different values for each of the regular feilds (Non-temp)
-    int randomness;
+    public int variance;
 
 
 
     //Temp
     // all of the temp feilds will start at 0, and they will go up depending on the persons actions and how other people interact with them
     // the temp feilds will slowly turn into 
-    int TempPrejudice = 0;
-    int TempAgreeableness = 0;
-    int TempConscientiousness = 0;
-    int TempNeuroticism = 0;
-    int TempIntroExtro = 0;
-    int TempHotHeadedness = 0;
+    public int tempPrejudice;
+    public int tempAgreeableness;
+    public int tempConscientiousness;
+    public int tempNeuroticism;
+    public int tempIntroExtro;
+    public int tempHotHeadedness;
+
+
+    public Personality()
+    {
+
+        variance = Person.rnm.Next(1, 11);
+        prejudice = Person.rnm.Next(-10, 11) * variance;
+        agreeableness = Person.rnm.Next(-10, 11) * variance;
+        conscientiousness = Person.rnm.Next(-10, 11) * variance;
+        neuroticism = Person.rnm.Next(-10, 11) * variance;
+        introExtro = Person.rnm.Next(-10, 11) * variance;
+        hotHeadedness = Person.rnm.Next(-10, 11) * variance;
 
 
 
-    public Personality(int randomness)
-	{
-        this.randomness = randomness;
-                 
-        
-        
+        totalPrejudice += prejudice;
+        totalAgreeableness += agreeableness;
+        totalConscientiousness += conscientiousness;
+        totalNeuroticism += neuroticism;
+        totalIntroExtro += introExtro;
+        totalHotHeadedness += hotHeadedness;
+
+
+
+
+
 
 
     }
+
+   
 
 
    

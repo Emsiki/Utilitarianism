@@ -2,12 +2,13 @@
 
 public class Lawful : Person
 {
-	public Lawful()
+	public Lawful():
+		base()
 	{
 
 
 
-
+		
 
 
 
