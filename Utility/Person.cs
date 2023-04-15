@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Threading.Tasks.Dataflow;
 
 public class Person
 {
@@ -62,8 +59,6 @@ public class Person
 
 	static public float totalHappieness;
 
-	
-
 
 
 	// Feilds
@@ -71,12 +66,17 @@ public class Person
 	public int happieness;
 	public int amountOfDirectFamily;
 	public Personality personality;
-	
+	public string race;
 	
 
 	
 	public Person()
 	{
+		string[] raceArray = new string[] { "White", "Black", "Hispanic", "Asian", "Pacific Islander", "Indigeonous", "MultiRacial" };
+
+
+		race = raceArray[rnm.Next(0,8)];
+
 		happieness = rnm.Next(0, 101);
 			
 		amountOfDirectFamily = rnm.Next(0, 1001);
@@ -104,9 +104,6 @@ public class Person
         }
         //Tracking the total happieness of the class
         totalHappieness += happieness;
-
-
-
 
 
 		personality = new Personality();
